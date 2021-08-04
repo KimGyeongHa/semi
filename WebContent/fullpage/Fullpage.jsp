@@ -92,8 +92,7 @@
 	 <script type="text/javascript">
   $('.section1').slick({
 	 autoplay: true,
-  	autoplaySpeed: 1000
-  });
+  	autoplaySpeed: 1000  });
 
   
 	</script>
