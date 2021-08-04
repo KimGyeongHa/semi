@@ -1,0 +1,406 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* 상단고정바 */
+.navbar {
+	width: 100%;
+	position:fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+	padding: 8px 12px;
+	z-index: 500px;
+}
+.navbar_logo{
+	background-color: green;
+	font-size: 24px;
+	color: white;
+	display: flex;
+	justify-content: flex-start;
+}
+.navbar_logo a{
+	text-decoration: none;
+	color: white;
+}
+.navbar_logo img{
+	width:50px; height:50px;
+}
+.navbar_menu img{
+	width:30px; height:30px;
+}
+.navbar_menu{
+	background-color: gold;
+	display: flex;
+	list-style: none;
+	padding-left: 0px;
+	justify-content: flex-end;
+		
+}
+.navbar_menu a{
+	text-decoration: none;
+	color: white;
+}
+
+.navbar_menu li{
+	padding: 8px 12px;
+	margin-right: 20px;
+	
+	
+}
+.navbar_menu li:hover{
+	background-color: green;
+	border-radius: 4px;
+}
+
+/* footer 하단 */
+footer{
+	text-align:center;
+	background: gray;
+	height: 15%;
+	width: 100vw;
+	font-family: "Open Sans";
+	color: white;
+	padding-top: 10px;
+	
+}
+.footer_contents{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+.footer_contents h3{
+	font-size: 1.8rem;
+	font-weight: 300px;
+	text-transform: capitalize;
+	line-height: 1rem;
+}
+.footer_contents p{
+	max-width: 400px;
+	margin: 10px auto;
+	line-height: 18px;
+	font-size: 14px;
+}
+.socials{
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px 0 5px 0;
+}
+.socials li{
+	margin: 0 10px;
+}
+.socials a{
+	text-decoration: none;
+	color: white;
+}
+.socials a i{
+	font-size: 1.1rem;
+	transition: color .4s ease;
+}
+.socials a:hover i{
+	color: aqua;	
+}
+.footer_bottom{
+	background: gray;
+	width: 100vw;
+	padding: 0;
+	text-align: center;
+}
+.footer_bottom p{
+	font-size: 14px;
+	word-spacing: 2px;
+	text-transform: capitalize;
+}
+.footer_bottom span{
+	text-transform: uppercase;
+	opacity: .4;
+	font-weight: 200;
+}
+
+/* 첫번째페이지 선택하는 리스트들 */
+.checklist{
+		display: flex;
+		border: 1px solid black;
+		width: 20%;
+		top: 300px;
+		justify-content: center;
+		display: flex;
+		background-color: gold;
+		margin-left: 50px;
+		position: fixed;
+	}
+	/* 지역선택 */
+	.zone select{
+		width: 150px;
+		height: 40px;
+		font-size: 20px;
+	}
+	
+	/* 체크박스 */
+	.checkbox{
+		border: 1px solid black;
+		position: relative;
+		left: -120px;
+		top: 120px;
+		background-color: green;
+		
+	}
+	.checkbox li{
+		list-style: none;
+		justify-content: center;
+		font-size: 20px;
+		
+	}
+	
+	/* 맛집리스트 */
+	.matzip {
+		width: 70%;
+		margin-left: 8%;
+		padding-left: 100px;
+		background-color: orange;
+		
+	}
+	.matzip ul{
+		background-color:buttonface;
+		display: flex;
+	 	justify-content: right;
+	 	margin-left: 20%;
+	 	width: 1330px;
+	}
+	.matzip li{
+		list-style: none;
+		margin-left: 40px;
+		margin-top: 40px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	.matzip img{
+		width: 400px; height: 300px;
+		
+	}
+	.matzip h3{
+		display: flex;
+		justify-content: flex-start;
+		margin-left: 20%;
+		margin-top: 20px;
+	}
+	
+	.matzip_story ul{ 
+		border-bottom: 3px solid black;
+		
+		}
+	.matzip a{text-decoration: none;}
+	
+	.foodimages {
+		position: relative;
+		border-bottom: 1px solid black;
+		top: 70px;
+		width: 100%;
+		height: 390px;
+		
+	}
+	
+	/* restuarantok페이지 */
+	.restuarant_static{
+		z-index: 100px;
+	}
+	.foodimages.slick-initialized.slick-slider{
+		z-index: 50px;
+	}
+	
+	/* 음식사진 */
+	.foodimages img{
+		width: 640px; height: 350px;
+        
+	/* 음식사진 다음버튼 */
+	}
+	.slick-next.slick-arrow{
+		position: relative;
+		width: 50px; height: 40px;
+		left: 1850px;
+	}
+	/* 음식사진 이전버튼 */
+	.slick-prev.slick-arrow{
+		position: relative;
+		width: 50px; height: 40px;
+		top: 390px;
+		left: 25px;
+	}
+	
+	/* 음식점 정보 */
+	.impormation{
+	font-size: 30px;
+	background-color: orange;
+	width: 1300px;
+	margin-top: 120px;
+    border-bottom: 2px solid black;
+	}
+	.impormation table{
+	margin-left: 60px;
+	}
+	.impormation td{
+	width: auto;
+	margin-bottom: 10px;
+	text-align: left;
+	}
+	.impormation a{
+	text-decoration: none;
+	}
+	
+	/* 음식점소개글 */
+	.introduce{
+	margin-top: 30px;
+	font-size: 20px;
+	background-color: gold;
+    border-bottom: 2px solid black;
+	width: 1300px;
+	}
+	.introduce table{
+	margin-left: 500px;
+	}
+	.introduce td{
+	text-align: center;
+	}
+	
+	/* 네이버맵 */
+	.maps{
+	position: absolute;
+	width: 370px;
+	left: 1440px;
+    bottom: 50px;
+	}
+	.maps td{
+		text-align: center;
+		padding-bottom: 30px;
+		font: bold;
+
+	}
+	
+	/* 전체글, 좋아요, 싫어요 수 */
+	.count {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1200px;
+    margin-left: 180px;
+    font-size: 28px;
+    margin-top: 50px;
+	}
+	.count li{
+	list-style: none;
+	border: 2px solid black;
+	margin-left: 8px;
+	}
+	.count ul#allcount{
+		background-color: green;
+		display: flex;
+		justify-content: flex-start;
+	}
+	.count ul#evaluate{
+	display: flex;
+	justify-content: flex-end;
+	}
+	.count ul#write_Img a{
+	text-decoration: none;
+	}
+	
+	/* 리뷰쓰기 이미지 */
+	.write_img input{
+		background-image: url("../images/review_write.PNG");
+		width: 53px;
+    	height: 66px;
+	}
+	.write_img {
+		display: flex;
+		justify-content: flex-end;
+		width: 1200px;
+		margin-top: 20px;
+	}
+	
+	/* 리뷰쓴 곳 */
+	.review table{
+	margin-left: 180px;
+    margin-top: 50px;
+    border-bottom: 1px solid black;
+	}
+	.review tr#review_img img{
+	width: 120px; height: 120px;
+	}
+	
+	/* 리뷰작성페이지 */
+	.review_write{
+	position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0px;
+    padding-top: 120px;
+	}
+	
+	.review_evaluate table{
+		border: 1px solid gray;
+   		margin-top: 100px;
+		
+	}
+	.add_img ul{
+		display: flex;
+    	list-style: none;
+    	margin-top: 30px;
+    	
+	}
+	.write_result input{
+		border: 0;
+	    background: #ffd710;
+	    margin-left: 130px;
+	    font-size: 50px;
+	    margin-top: 30px;
+	    margin-bottom: 40px;
+	}
+	.write_result a{
+		text-decoration: none;
+	}
+	.write_result input:hover{
+	cursor: pointer;
+	}
+	.write_result input:active {
+	margin-left: 2px;
+	
+	}
+
+	/* writer */
+	.write{
+ 		position: static;
+ 		display: flex;
+ 		flex-direction: column;
+ 		align-items: center;
+ 		padding-bottom: 30px;
+    	padding-top: 130px;
+ 	}
+ 	.write #btns td{
+ 		padding-top: 40px;
+ 	}
+ 	.write #btns input{
+ 		border: 0;
+ 		border-bottom:1px solid black;
+ 		background: #ffd710;
+ 		margin-left: 130px;
+ 		font-size: 40px;
+ 		margin-top: 28px;
+ 		margin-bottom: 30px;
+ 	}
+ 	.write #btns input:hover{
+ 		cursor: pointer;
+ 	}
+ 	.write #btns input:active {
+	margin-left: 132px;
+	}
+	
+	
