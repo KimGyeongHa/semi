@@ -11,10 +11,10 @@ import java.util.Calendar;
 
 public class Board1DAO {
 	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@db1.cwofzefzc3ci.ap-northeast-2.rds.amazonaws.com:1521:db1";
-	String user = "jadmin";
-	String password = "tiger999";
-	Connection conn = null; //java.sql �엳�뒗寃껋쑝濡� import
+	String url = "";
+	String user = "";
+	String password = ";
+	Connection conn = null; 
 	PreparedStatement pstmt = null;
 	StringBuffer sb = new StringBuffer();
 	ResultSet rs = null;
