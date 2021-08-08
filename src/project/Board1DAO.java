@@ -44,13 +44,6 @@ public class Board1DAO {
 	      sb.append("WHERE BNO >=? ");
 	      sb.append("AND BTYPE= ? ");
 	      
-	      
-	      
-	      
-	      
-	      
-	      //sb.setLength(0);
-	      //sb.append("SELECT bno, writer, title , contents , regdate , hits, ip , status  FROM BOARD ");
 	      ArrayList<Board1VO> list = new ArrayList<Board1VO>();
 	      try {
 	         pstmt = conn.prepareStatement(sb.toString());
@@ -98,6 +91,8 @@ public class Board1DAO {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	public void TogetherInsertOne(String nickName, String title, String bContents) {
 	      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd kk:mm:ss");
 	      String strDate = dateFormat.format(Calendar.getInstance().getTime());
@@ -121,7 +116,7 @@ public class Board1DAO {
 		sb.setLength(0);
 		sb.append("SELECT bno, btype, nickname, title, bregdate , bcontents , rcm , norcm, hits ");
 		sb.append(" FROM BOARD WHERE BNO = ? ");
-		 // 鈺곌퀗援뷂옙肉� 筌띾슣�앾옙釉�占쎈뮉 占쎈뻬 占쎈립揶쏆뮆彛� �빊�뮆�젾
+	
 		Board1VO vo = null;
 		try {
 			pstmt = conn.prepareStatement(sb.toString());
@@ -139,7 +134,6 @@ public class Board1DAO {
 			int norcm = rs.getInt("NORCM");
 			int hits = rs.getInt("HITS");
 	
-			// no占쎈뮉 野껊슣�뻻�눧占� 甕곕뜇�깈
 			vo = new Board1VO(no, btype, nickName, title, bregdate, bcontents, rcm, norcm, hits);
 			
 		} catch (SQLException e) {
@@ -173,21 +167,6 @@ public class Board1DAO {
 		
 		
 	}//updateOne(BoardVO vo) end
-	
-	public void close() {
-		
-		
-		try {
-			if(rs != null) rs.close();
-			if(pstmt != null)pstmt.close();
-			if(conn != null)conn.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}// close() end
 	
 	public void updateOne(Board1VO vo) {
 		sb.setLength(0);
@@ -242,6 +221,22 @@ public class Board1DAO {
 		
 		return result;
 	}
+	
+		public void close() {
+		
+		
+		try {
+			if(rs != null) rs.close();
+			if(pstmt != null)pstmt.close();
+			if(conn != null)conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}// close() end
+	
 	
 
 }
