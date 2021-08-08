@@ -11,10 +11,10 @@ import java.util.Calendar;
 public class DetailDAO {
 
 	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@db1.cwofzefzc3ci.ap-northeast-2.rds.amazonaws.com:1521:db1";
-	String user = "jadmin";
-	String password = "tiger999";
-	Connection conn = null; //java.sql�뿉 �엳�뒗寃껋쑝濡� import
+	String url = "";
+	String user = "";
+	String password = "";
+	Connection conn = null; 
 	PreparedStatement pstmt = null;
 	StringBuffer sb = new StringBuffer();
 	ResultSet rs = null;
@@ -28,7 +28,7 @@ public class DetailDAO {
 			} catch (SQLException e) {
 				System.out.println("db로딩실패");
 			} catch (ClassNotFoundException e) {
-			System.out.println("�뱶�씪�씠踰� 濡쒕뵫�떎�뙣");
+			System.out.println("커넥션오류");
 			e.printStackTrace();
 		}
 	}
@@ -70,8 +70,7 @@ public class DetailDAO {
 			if(pstmt != null)pstmt.close();
 			if(conn != null)conn.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("자원반납 ");
 		}
 		
 		
