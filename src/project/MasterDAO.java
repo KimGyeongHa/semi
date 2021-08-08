@@ -9,10 +9,10 @@ import java.sql.SQLException;
 public class MasterDAO {
 
 	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@db1.cwofzefzc3ci.ap-northeast-2.rds.amazonaws.com:1521:db1";
-	String user = "jadmin";
-	String password = "tiger999";
-	Connection conn = null; //java.sql�뿉 �엳�뒗寃껋쑝濡� import
+	String url = "";
+	String user = "";
+	String password = "";
+	Connection conn = null;
 	PreparedStatement pstmt = null;
 	StringBuffer sb = new StringBuffer();
 	ResultSet rs = null;
@@ -24,7 +24,7 @@ public class MasterDAO {
 			conn = DriverManager.getConnection(url,user,password);
 			System.out.println("conn : " + conn);
 			} catch (SQLException e) {
-				System.out.println("db�뿰寃곗떎�뙣");
+				System.out.println("db오류");
 			} catch (ClassNotFoundException e) {
 			System.out.println("�뱶�씪�씠踰� 濡쒕뵫�떎�뙣");
 			e.printStackTrace();
@@ -54,6 +54,8 @@ public class MasterDAO {
 		}
 		
 	}// class end
+	
+	
 	public MasterVO isEXists(String id , String pwd) {
 		sb.setLength(0);
 		sb.append("SELECT NICKNAME, ID, MNO, NAME, PW, PROFILE " );
@@ -105,17 +107,7 @@ public class MasterDAO {
 			
 			if(rs.next()) {
 				cnt= rs.getInt("cnt");
-			}
-			
-			//System.out.println(rs);
-			/*
-			 * while(rs.next()) { String nickname = rs.getString("NICKNAME"); String id1 =
-			 * rs.getString("ID"); int mno = rs.getInt("MNO"); String name =
-			 * rs.getString("NAME"); String pw = rs.getString("PW"); String profile =
-			 * rs.getString("PROFILE");
-			 * 
-			 * vo = new MasterVO(nickname, id1, mno, name, pw, profile); }
-			 */			
+			}	
 		} catch (SQLException e) {
 		
 			e.printStackTrace();
@@ -151,39 +143,7 @@ public class MasterDAO {
 		
 		
 	}
-//	public MasterVO nickNameDoubleCheck(String nickName) {
-//		sb.setLength(0);
-//		sb.append("SELECT NICKNAME, ID, MNO, NAME, PW, PROFILE " );
-//		sb.append("FROM MEMBER_MASTER " );
-//		sb.append("WHERE NICKNAME = ? " );
-//		
-//		MasterVO vo = null;
-//		
-//		try {
-//			pstmt = conn.prepareStatement(sb.toString());
-//			pstmt.setString(1, nickName);
-//			
-//			rs = pstmt.executeQuery();
-//			
-//			//System.out.println(rs);
-//			while(rs.next()) {
-//				String nickname = rs.getString("NICKNAME");
-//				String id1 = rs.getString("ID");
-//				int mno = rs.getInt("MNO");
-//				String name = rs.getString("NAME");
-//				String pw = rs.getString("PW");
-//				String profile = rs.getString("PROFILE");
-//				
-//				vo = new MasterVO(nickname, id1, mno, name, pw, profile);
-//			}			
-//		} catch (SQLException e) {
-//		
-//			e.printStackTrace();
-//		}
-//		return vo;
-//		
-//		
-//	}
+
 	public MasterVO selectNickName(String id) {
 		sb.setLength(0);
 		sb.append("SELECT NICKNAME, ID, MNO, NAME, PW, PROFILE FROM MEMBER_MASTER ");
@@ -219,8 +179,7 @@ public class MasterDAO {
 			if(pstmt != null)pstmt.close();
 			if(conn != null)conn.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("자원반납 실패");
 		}
 		
 		
