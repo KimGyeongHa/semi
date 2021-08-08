@@ -12,10 +12,10 @@ import java.util.Calendar;
 
 	public class RmenuDAO {
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@db1.cwofzefzc3ci.ap-northeast-2.rds.amazonaws.com:1521:db1";
-		String user = "jadmin";
-		String password = "tiger999";
-		Connection conn = null; //java.sql에 있는것으로 import
+		String url = "";
+		String user = "";
+		String password = "";
+		Connection conn = null; 
 		PreparedStatement pstmt = null;
 		StringBuffer sb = new StringBuffer();
 		ResultSet rs = null;
@@ -35,20 +35,6 @@ import java.util.Calendar;
 		}
 		
 		
-		/*
-		 * public void insertMenu(int rmno, String menu , String sal, String imgsrc ,
-		 * int rno ) { sb.setLength(0); sb.append("INSERT INTO RMENU ");
-		 * sb.append("VALUES (?, ? , ? ,? " ); try { // 문장객체 pstmt =
-		 * conn.prepareStatement(sb.toString()); pstmt.setString(1, menu);
-		 * pstmt.setString(2, sal); pstmt.setString(3, imgsrc); pstmt.setInt(4, rno);
-		 * 
-		 * pstmt.executeUpdate();
-		 * 
-		 * } catch (SQLException e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); }// insertOne(BoardVO vo) end
-		 * 
-		 * }// class end
-		 */		
 		public ArrayList<RmenuVO> selectAll(int no){
 			sb.setLength(0);
 			
