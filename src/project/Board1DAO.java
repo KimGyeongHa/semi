@@ -26,9 +26,9 @@ public class Board1DAO {
 			conn = DriverManager.getConnection(url,user,password);
 			System.out.println("conn : " + conn);
 			} catch (SQLException e) {
-				System.out.println("db�뿰寃곗떎�뙣");
+				System.out.println("DB오류");
 			} catch (ClassNotFoundException e) {
-			System.out.println("�뱶�씪�씠踰꾨줈�뵫�떎�뙣");
+			System.out.println("커넥션오류");
 			e.printStackTrace();
 		}
 	}
